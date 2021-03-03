@@ -34,10 +34,11 @@ for (int i = 1; i <= 4; i++)
     } 
     else if (i <= 3)
     {
-        Console.WriteLine($"Nope. Try again. You have {4 - i} chance{ (i == 3 ? "" : "s") } left.");
+        string hiLow = guessInt > secretNumber ? "high" : "low";
+        Console.WriteLine($"Nope. You guessed too {hiLow}. Try again. You have {4 - i} chance{ (i == 3 ? "" : "s") } left.");
     }
     else
     {
-         Console.WriteLine($"You lost. The answer was {secretNumber. Better luck next time");
+         Console.WriteLine($"You lost. The answer was {secretNumber}. Better luck next time");
     }
 }
