@@ -10,8 +10,9 @@ int secretNumber = new Random().Next(1, 100);
 //Part 1:  Display a message to the user asking them to guess the secret number.
 Console.WriteLine("Try to guess the secret number!");
 // Part 7: Prompt the user for a difficulty level before they are prompted to guess the number.
+// Part 8: Add a difficulty level of "Cheater" which will cause the program to continue prompting the user until they get the answer correct.
 Console.WriteLine("Select a difficulty level.");
-Console.WriteLine("1. Easy\n2. Medium\n3. Hard ");
+Console.WriteLine("1. Easy\n2. Medium\n3. Hard\n4. Cheater (unlimted guesses) ");
 
 // Convert the incoming user input to a number before saving it
 int level = Int32.Parse(Console.ReadLine());
@@ -20,7 +21,8 @@ int level = Int32.Parse(Console.ReadLine());
 Dictionary<int, int> counterCollection = new Dictionary<int, int>() {
     {1, 8},
     {2, 6},
-    {3, 4}
+    {3, 4},
+    {4, int.MaxValue}
 };
 int levelTries = counterCollection[level];
 int counter = levelTries;
@@ -57,3 +59,4 @@ for (int i = 1; i <= counter; i++)
          Console.WriteLine($"You lost. The answer was {secretNumber}. Better luck next time");
     }
 }
+Console.WriteLine("Bye now!");
